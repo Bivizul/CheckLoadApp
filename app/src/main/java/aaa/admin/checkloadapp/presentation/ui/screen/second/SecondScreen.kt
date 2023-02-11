@@ -40,20 +40,20 @@ fun SecondScreen(
                     navController.popBackStack()
                 }
             )
-            CustomBlockLinearProgressBar(
-                textTitle = "Random value",
-                textPercent = "62%"
-            )
-            CustomBlockLinearProgressBar(
-                textTitle = "Random value 2",
-                textPercent = "30%"
-            )
+//            CustomBlockLinearProgressBar(
+//                textTitle = "Random value",
+////                textPercent = "62%"
+//            )
+//            CustomBlockLinearProgressBar(
+//                textTitle = "Random value 2",
+////                textPercent = "30%"
+//            )
             ButtonBig(onClick = { /*TODO*/ }, textButton = "Randomize values")
             ReverseCounter()
-            CustomBlockLinearProgressBar(
-                textTitle = "Load Data from server",
-                textPercent = "60%"
-            )
+//            CustomBlockLinearProgressBar(
+//                textTitle = "Load Data from server",
+////                textPercent = "60%"
+//            )
             CardRating()
             LazyRow {
 //                CardRating()
