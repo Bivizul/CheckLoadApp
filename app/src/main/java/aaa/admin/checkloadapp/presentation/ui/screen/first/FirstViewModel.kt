@@ -12,6 +12,7 @@ class FirstViewModel : ViewModel() {
 
     var downloadedPercentage = MutableLiveData<Float>()
 
+
     fun startThreadGradient() {
         viewModelScope.launch {
             withContext(Dispatchers.Default) {

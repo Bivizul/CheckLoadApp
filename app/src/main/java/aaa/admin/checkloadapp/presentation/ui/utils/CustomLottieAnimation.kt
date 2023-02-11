@@ -7,7 +7,7 @@ import com.airbnb.lottie.compose.*
 
 @Composable
 fun CustomLottieAnimation(
-    togglePlaying : Boolean
+    togglePlaying: Boolean
 ) {
 
 //    val animationSpec = remember { LottieAnimationSpec.RawRes(R.raw.android_logo) }
@@ -15,7 +15,7 @@ fun CustomLottieAnimation(
 
 //    val tooglePlaing = true
 
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.android_logo))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.first_load))
     val progress by animateLottieCompositionAsState(
         composition = composition,
         isPlaying = togglePlaying,

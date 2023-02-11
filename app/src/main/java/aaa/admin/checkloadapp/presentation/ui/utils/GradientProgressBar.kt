@@ -5,7 +5,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
@@ -13,18 +12,14 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun GradientProgressBar(
     downloadedPercentage: Float,
     gradientColors: List<Color>,
     backgroundIndicatorColor: Color,
-    radius:Float,
+    radius: Float,
     indicatorHeight: Dp,
 //    indicatorPadding: Dp = 0.dp,
 //    textStyle: TextStyle = TextStyle(
@@ -66,8 +61,8 @@ fun GradientProgressBar(
         drawRoundRect(
             color = backgroundIndicatorColor,
             topLeft = Offset.Zero,
-            size = Size(size.width,size.height),
-            cornerRadius = CornerRadius(radius,radius)
+            size = Size(size.width, size.height),
+            cornerRadius = CornerRadius(radius, radius)
         )
 
 
@@ -87,8 +82,8 @@ fun GradientProgressBar(
                 colors = gradientColors
             ),
             topLeft = Offset.Zero,
-            size = Size(progress,size.height),
-            cornerRadius = CornerRadius(radius,radius)
+            size = Size(progress, size.height),
+            cornerRadius = CornerRadius(radius, radius)
         )
     }
 }

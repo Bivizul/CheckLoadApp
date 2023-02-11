@@ -2,10 +2,8 @@ package aaa.admin.checkloadapp.presentation.ui.screen.first
 
 import aaa.admin.checkloadapp.presentation.navigation.Screen
 import aaa.admin.checkloadapp.presentation.ui.theme.Typography
-import aaa.admin.checkloadapp.presentation.ui.utils.ButtonBig
-import aaa.admin.checkloadapp.presentation.ui.utils.ButtonSmall
-import aaa.admin.checkloadapp.presentation.ui.utils.CustomBlockLinearProgressBar
-import aaa.admin.checkloadapp.presentation.ui.utils.CustomLottieAnimation
+import aaa.admin.checkloadapp.presentation.ui.utils.*
+import aaa.admin.checkloadapp.presentation.ui.utils.alert.CustomAlert
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.compose.animation.core.LinearEasing
@@ -31,6 +29,8 @@ fun FirstScreen(
 ) {
 
     val downloadedPercentage by viewModel.downloadedPercentage.observeAsState(initial = 0f)
+
+    val openDialog = remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         viewModel.startThreadGradient()
@@ -63,7 +63,9 @@ fun FirstScreen(
             BlockTwo()
             Spacer(modifier = modifier.height(16.dp))
             ButtonBig(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    openDialog.value = !openDialog.value
+                },
                 textButton = "Show custom alert"
             )
             Spacer(modifier = modifier.height(16.dp))
@@ -72,36 +74,17 @@ fun FirstScreen(
                 textButton = "Go to second screen"
             )
         }
-    }
 
-
-}
-
-@Composable
-fun BlockOne(
-    modifier: Modifier = Modifier
-) {
-
-    Surface(
-        modifier = modifier.fillMaxWidth()
-    ) {
-        Column() {
-            Row(
-                modifier = modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(text = "Loading ...")
-                Text(text = "48%")
-            }
-            LinearProgressIndicator(
-                modifier = modifier.height(25.dp),
-                progress = 40f,
-                color = Color.Magenta
-            )
+        if (openDialog.value) {
+            CustomAlert(openDialog = openDialog)
         }
+
+
     }
 
+
 }
+
 
 @Composable
 fun BlockTwo(

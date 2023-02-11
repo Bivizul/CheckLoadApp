@@ -1,6 +1,5 @@
 package aaa.admin.checkloadapp.presentation.ui.utils
 
-import aaa.admin.checkloadapp.presentation.ui.theme.Typography
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text

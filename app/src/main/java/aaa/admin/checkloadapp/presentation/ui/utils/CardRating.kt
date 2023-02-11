@@ -29,11 +29,11 @@ fun CardRating(
     ) {
         Column() {
             Row() {
-                Image(painter = painterResource(id = R.drawable.star_24), contentDescription =null)
-                Image(painter = painterResource(id = R.drawable.star_24), contentDescription =null)
-                Image(painter = painterResource(id = R.drawable.star_24), contentDescription =null)
-                Image(painter = painterResource(id = R.drawable.star_24), contentDescription =null)
-                Image(painter = painterResource(id = R.drawable.star_24), contentDescription =null)
+                Image(painter = painterResource(id = R.drawable.star_24), contentDescription = null)
+                Image(painter = painterResource(id = R.drawable.star_24), contentDescription = null)
+                Image(painter = painterResource(id = R.drawable.star_24), contentDescription = null)
+                Image(painter = painterResource(id = R.drawable.star_24), contentDescription = null)
+                Image(painter = painterResource(id = R.drawable.star_24), contentDescription = null)
             }
             Row {
 
