@@ -1,7 +1,6 @@
 package aaa.admin.checkloadapp.presentation.ui.utils
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,31 +24,31 @@ fun CustomBlockLinearProgressBar(
 //    Surface(
 //        modifier = modifier.fillMaxWidth()
 //    ) {
-        Column(
-            modifier = modifier.fillMaxWidth()
+    Column(
+        modifier = modifier.fillMaxWidth()
+    ) {
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(
-                modifier = modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    text = textTitle,
-                    style = textStyle
-                )
-                Text(
-                    text = downloadedPercentage.toInt().toString() + "%",
-                    style = textStyle
-                )
-            }
-            Spacer(modifier = modifier.height(16.dp))
-            GradientProgressBar(
-                downloadedPercentage = downloadedPercentage,
-                gradientColors = gradientColors,
-                backgroundIndicatorColor = backgroundIndicatorColor,
-                radius = radius,
-                indicatorHeight = indicatorHeight
+            Text(
+                text = textTitle,
+                style = textStyle
+            )
+            Text(
+                text = downloadedPercentage.toInt().toString() + "%",
+                style = textStyle
             )
         }
+        Spacer(modifier = modifier.height(16.dp))
+        GradientProgressBar(
+            downloadedPercentage = downloadedPercentage,
+            gradientColors = gradientColors,
+            backgroundIndicatorColor = backgroundIndicatorColor,
+            radius = radius,
+            indicatorHeight = indicatorHeight
+        )
+    }
 //    }
 }
 

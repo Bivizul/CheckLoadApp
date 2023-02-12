@@ -7,6 +7,8 @@ import aaa.admin.checkloadapp.presentation.ui.utils.ButtonBig
 import aaa.admin.checkloadapp.presentation.ui.utils.CardRating
 import aaa.admin.checkloadapp.presentation.ui.utils.CustomBlockLinearProgressBar
 import aaa.admin.checkloadapp.presentation.ui.utils.ReverseCounter
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -21,31 +23,38 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SecondScreen(
+    secondViewModel: SecondViewModel,
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    viewModel: SecondViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+//    secondViewModel: SecondViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
 ) {
 
-    val randomDownloadedPercentage1 by viewModel.randomDownloadedPercentage1.observeAsState(initial = 0f)
-    val randomDownloadedPercentage2 by viewModel.randomDownloadedPercentage2.observeAsState(initial = 0f)
-    val timer by viewModel.reverseCounter.observeAsState(0L)
+    val randomDownloadedPercentage1 by secondViewModel.randomDownloadedPercentage1.observeAsState(
+        initial = 0f
+    )
+    val randomDownloadedPercentage2 by secondViewModel.randomDownloadedPercentage2.observeAsState(
+        initial = 0f
+    )
+    val timer by secondViewModel.reverseCounter.observeAsState(0L)
+//    val raitings by secondViewModel.listRate.observeAsState()
 
 //    Log.e(TAG, "SecondScreen: randomDownloadedPercentage1 : $randomDownloadedPercentage1")
 //    Log.e(TAG, "SecondScreen: randomDownloadedPercentage2 : $randomDownloadedPercentage2")
 
+//    Log.e(TAG, "SecondScreen: raitings : $raitings")
+
     LaunchedEffect(Unit) {
-        viewModel.startThreadGradient1()
-        viewModel.startThreadGradient2()
-        viewModel.startReverseCounter(SECONDS_TIMER * 1000L)
+        secondViewModel.startThreadGradient1()
+        secondViewModel.startThreadGradient2()
+        secondViewModel.startReverseCounter(SECONDS_TIMER * 1000L)
+//        secondViewModel.getListRate()
     }
 
     Scaffold(
@@ -92,7 +101,7 @@ fun SecondScreen(
             )
             ButtonBig(
                 onClick = {
-                    viewModel.clearAndRestartProgressBars()
+                    secondViewModel.clearAndRestartProgressBars()
                 },
                 textButton = "Randomize values"
             )
@@ -111,8 +120,8 @@ fun SecondScreen(
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-private fun PreviewSecondScreen() {
-    SecondScreen(navController = NavHostController(LocalContext.current))
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//private fun PreviewSecondScreen() {
+//    SecondScreen(navController = NavHostController(LocalContext.current))
+//}

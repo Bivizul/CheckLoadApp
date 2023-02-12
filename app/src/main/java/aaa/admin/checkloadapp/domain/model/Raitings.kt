@@ -1,5 +1,8 @@
 package aaa.admin.checkloadapp.domain.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class Raitings(
     val `0`: NumberRate,
     val `1`: NumberRate,

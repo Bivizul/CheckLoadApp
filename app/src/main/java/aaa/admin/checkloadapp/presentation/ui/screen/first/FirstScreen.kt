@@ -113,37 +113,37 @@ fun BlockTwo(
 //        modifier = modifier.fillMaxWidth(),
 //
 //    ) {
-        Column(
-            modifier = modifier.fillMaxWidth(),
-        ) {
-            Text(text = "Lottie animation")
-            Row() {
-                Box(
-                    modifier = modifier
-                        .size(100.dp)
-                        .alpha(alpha)
+    Column(
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        Text(text = "Lottie animation")
+        Row() {
+            Box(
+                modifier = modifier
+                    .size(100.dp)
+                    .alpha(alpha)
 //                        .background(Color.Green)
-                ) {
-                    CustomLottieAnimation(togglePlaying = togglePlaying)
-                }
-                Column(
-                    modifier = modifier
-                ) {
-                    ButtonSmall(
-                        onClick = { togglePlaying = true },
-                        textButton = "Start Animation"
-                    )
-                    ButtonSmall(
-                        onClick = { togglePlaying = false },
-                        textButton = "Stop Animation"
-                    )
-                    ButtonSmall(
-                        onClick = { visible = !visible },
-                        textButton = "Hide / Show Animation"
-                    )
-                }
+            ) {
+                CustomLottieAnimation(togglePlaying = togglePlaying)
+            }
+            Column(
+                modifier = modifier
+            ) {
+                ButtonSmall(
+                    onClick = { togglePlaying = true },
+                    textButton = "Start Animation"
+                )
+                ButtonSmall(
+                    onClick = { togglePlaying = false },
+                    textButton = "Stop Animation"
+                )
+                ButtonSmall(
+                    onClick = { visible = !visible },
+                    textButton = "Hide / Show Animation"
+                )
             }
         }
+    }
 //    }
 }
 

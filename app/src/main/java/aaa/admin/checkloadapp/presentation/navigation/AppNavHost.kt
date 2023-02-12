@@ -2,8 +2,10 @@ package aaa.admin.checkloadapp.presentation.navigation
 
 import aaa.admin.checkloadapp.presentation.ui.screen.first.FirstScreen
 import aaa.admin.checkloadapp.presentation.ui.screen.second.SecondScreen
+import aaa.admin.checkloadapp.presentation.ui.screen.second.SecondViewModel
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,6 +18,7 @@ sealed class Screen(val route: String) {
 
 @Composable
 fun AppNavHost(
+//    secondViewModel: SecondViewModel,
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
     startDestination: String = Screen.FirstScreenRoute.route
@@ -31,7 +34,11 @@ fun AppNavHost(
             FirstScreen(navController = navController)
         }
         composable(Screen.SecondScreenRoute.route) {
-            SecondScreen(navController = navController)
+            val secondViewModel = hiltViewModel<SecondViewModel>()
+            SecondScreen(
+                secondViewModel = secondViewModel,
+                navController = navController
+            )
 //            BackHandler() {
 //                gamlimact.finish()
 //            }

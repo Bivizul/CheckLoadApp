@@ -4,16 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class FirstViewModel : ViewModel() {
+@HiltViewModel
+class FirstViewModel @Inject constructor() : ViewModel() {
 
     private val _downloadedPercentage = MutableLiveData<Float>()
-    val downloadedPercentage : LiveData<Float> = _downloadedPercentage
-
+    val downloadedPercentage: LiveData<Float> = _downloadedPercentage
 
     fun startThreadGradient() {
         viewModelScope.launch {
