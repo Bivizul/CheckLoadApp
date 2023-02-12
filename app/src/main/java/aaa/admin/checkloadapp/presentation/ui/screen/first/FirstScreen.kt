@@ -37,7 +37,8 @@ fun FirstScreen(
     }
 
     Scaffold(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize(),
+        containerColor = Color.Transparent
     ) { paddingValues ->
 
         Column(
@@ -105,14 +106,16 @@ fun BlockTwo(
         ),
     )
 
-
     Log.e(TAG, "BlockTwo: visible : $visible")
     Log.e(TAG, "BlockTwo: alpha : $alpha")
 
-    Surface(
-        modifier = modifier.fillMaxWidth()
-    ) {
-        Column() {
+//    Surface(
+//        modifier = modifier.fillMaxWidth(),
+//
+//    ) {
+        Column(
+            modifier = modifier.fillMaxWidth(),
+        ) {
             Text(text = "Lottie animation")
             Row() {
                 Box(
@@ -141,7 +144,7 @@ fun BlockTwo(
                 }
             }
         }
-    }
+//    }
 }
 
 

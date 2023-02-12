@@ -22,10 +22,12 @@ fun CustomBlockLinearProgressBar(
     textStyle: TextStyle,
 ) {
 
-    Surface(
-        modifier = modifier.fillMaxWidth()
-    ) {
-        Column {
+//    Surface(
+//        modifier = modifier.fillMaxWidth()
+//    ) {
+        Column(
+            modifier = modifier.fillMaxWidth()
+        ) {
             Row(
                 modifier = modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -48,7 +50,7 @@ fun CustomBlockLinearProgressBar(
                 indicatorHeight = indicatorHeight
             )
         }
-    }
+//    }
 }
 
 
